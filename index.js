@@ -28,11 +28,18 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+
+    counter1 is a variable that is assigned to a function with a nested function which looks to the parent function's scope level to find the count variable.
+    counter2 is a declared function that looks outside of itself to the global level to find the count variable.
   
   2. Which of the two uses a closure? How can you tell?
+    Both use the ability to look to higher levels of scope to find the definition of something they use, so both use closure.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+      counter2 be better?  
+    
+    counter1 is useful when private variables are needed or to control side effects. 
+    counter2 is preferable when something in the global scope that is used elsewhere in the code needs to be affected.
 */
 
 // counter1 code
@@ -62,9 +69,10 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning () {
+    return Math.floor(Math.random() * 3);
 }
+//console.log(inning());
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
