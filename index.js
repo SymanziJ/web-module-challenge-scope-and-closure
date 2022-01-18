@@ -165,7 +165,6 @@ function scoreboard(getInningScorecb, inningcb, number) {
   let homeScoreTotal = 0;
 
   for (let i = 1; i < number; i++){
-    getInningScorecb(inningcb);
     let awayScore = getInningScorecb(inningcb).Away;
     let homeScore = getInningScorecb(inningcb).Home;
     gameScore.push(`Inning ${i}: Away ${awayScore} - Home ${homeScore}`);
@@ -178,6 +177,7 @@ function scoreboard(getInningScorecb, inningcb, number) {
   } else {
     gameScore.push(`Final Score: Away ${awayScoreTotal} - Home ${homeScoreTotal}`);
   }
+
   return gameScore;
 }
 

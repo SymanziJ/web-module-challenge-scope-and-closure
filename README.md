@@ -61,6 +61,8 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+  closure is when something within a function block's scope accesses something outside of that scope.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -82,8 +84,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  line 73. The anonymous function's console.log accesses 'name' which is a parameter of the parent function personalDice()
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  The functions and their scopes remain the same. The outcome however is usually different because of the newRoll random number method. 
 c. What is the lexical scope of `newRoll`? 
+  'newRoll''s scope is limited to the function block that it is a part of.
 
 
 ### Task 3 - Stretch Goals
