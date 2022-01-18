@@ -159,11 +159,29 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScorecb, inningcb, number) {
+  let gameScore = [];
+  let awayScoreTotal = 0;
+  let homeScoreTotal = 0;
+
+  for (let i = 1; i < number; i++){
+    getInningScorecb(inningcb);
+    let awayScore = getInningScorecb(inningcb).Away;
+    let homeScore = getInningScorecb(inningcb).Home;
+    gameScore.push(`Inning ${i}: Away ${awayScore} - Home ${homeScore}`);
+    awayScoreTotal += awayScore;
+    homeScoreTotal += homeScore;
+  }
+
+  if (awayScoreTotal === homeScoreTotal){
+    gameScore.push(`This game will require extra innings: Away ${awayScoreTotal} - Home ${homeScoreTotal}`);
+  } else {
+    gameScore.push(`Final Score: Away ${awayScoreTotal} - Home ${homeScoreTotal}`);
+  }
+  return gameScore;
 }
 
-
+console.log(scoreboard(getInningScore, inning, 10));
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
