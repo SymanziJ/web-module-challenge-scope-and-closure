@@ -106,8 +106,15 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inningcb) {
+  const inningScore = {
+    Home: 0,
+    Away: 0
+  }
+  inningScore.Home = inning();
+  inningScore.Away = inning();
+
+  return inningScore;
 }
 
 
